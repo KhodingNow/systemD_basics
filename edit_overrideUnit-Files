@@ -1,0 +1,42 @@
+#!/usr/bin/env/ Python3
+
+# COMMAND
+
+# sudo systemctl edit apache2.service => OUTPUT of command
+
+## Editing /etc/systemd/system/apache2.service.d/override.conf
+### Anything between here and the comment below will become the contents of the drop-in file
+
+
+
+### Edits below this comment will be discarded
+
+
+### /usr/lib/systemd/system/apache2.service
+# [Unit]
+# Description=The Apache HTTP Server
+# After=network.target remote-fs.target nss-lookup.target
+# Documentation=https://httpd.apache.org/docs/2.4/
+# 
+# [Service]
+# Type=forking
+# Environment=APACHE_STARTED_BY_SYSTEMD=true
+# ExecStart=/usr/sbin/apachectl start
+# ExecStop=/usr/sbin/apachectl graceful-stop
+# ExecReload=/usr/sbin/apachectl graceful
+# KillMode=mixed
+# PrivateTmp=true
+# Restart=on-abort
+# OOMPolicy=continue
+# 
+# [Install]
+# WantedBy=multi-user.target
+
+# These are the contents of the file - notide the unit files [Unit] [Service] [Install] - this is where you can make edits or override files.It is a CONFIG file.This file is organized in order of priority. 
+
+
+# COMMAND
+
+# sudo systemctl daemon-reload - this command tells systemd to look at files with any changes that were on them, if there are, make sure those changes take effect. If this does't happen, those changes may not take effect. This command ensures that.  
+
+

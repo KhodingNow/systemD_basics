@@ -1,0 +1,15 @@
+#!/usr/bin/env Python3
+
+# Systemd Unit file has three sections in [brackets] - Unit - Service - Install
+# The unit pertains to a webserver (apache)
+# Wants = http-init.service ...wants outlines that something else is required before this unit file can start up
+# there is also BEFORE and AFTER ..After=network.target remote-fs.target nss-lookup.target http-init.service
+# Documentation=man:http.service(8)
+
+# [Service] - has config unit, these decide what should happen when the system start up
+# Type=notify - notify waits for systemd to tell it is ready
+# Environment=LAND=C
+# ExecStart=/usr/sbin/http $OPTIONS
+
+# [Install]
+# WantedBy=multi-user.target - multi user target means the system may have reached a stage where multi users may use the system, if not , they cannot use it.

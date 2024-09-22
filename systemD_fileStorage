@@ -1,0 +1,36 @@
+#!/usr/bin/env Python3
+
+# Service files are text files that contain instructions telling systemS how to manage that service. Service files can be foun in any directory, and have a file extension of that service (.ext, .sh, .pdf)
+# System Unit Directories: IN THEIR ORDER OF PRIORITY ON LINUX
+# 1. /etc/systemd/system
+# 2. /run/system/system
+# 3. /lib/system/system
+# Any service file of dir stored in a service wil be run in order of priority....any file/ dir on /etc/system/system WILL take priority over .../lib/system/system
+# IF you want your changes to TAKE EFFECT, make sure they are stored in a directory with the most priority. ...systemD favours ../etc/systemd/system at all times.
+
+
+# COMMANDS:
+
+# ls -l /lib/systemd/system =>  OUTPUT:
+
+# -rw-r--r-- 1 root root  1768 Feb 27  2024  systemd-timesyncd.service
+# -rw-r--r-- 1 root root   747 Feb 27  2024  systemd-tmpfiles-clean.service
+# -rw-r--r-- 1 root root   539 Feb 27  2024  systemd-tmpfiles-clean.timer
+
+# ls -l /run/systemd/system - this is the least looked at directory
+
+# ls -l /etc/systemd/system => OUTPUT:
+
+# total 56
+# drwxr-xr-x 2 root root 4096 Jun  4 13:05 apache2.service.d
+# drwxr-xr-x 2 root root 4096 Jul  1 14:02 cloud-init.target.wants
+# lrwxrwxrwx 1 root root   44 Mar 17  2024 dbus-org.freedesktop.ModemManager1.service -> /usr/lib/systemd/system/ModemManager.service
+# lrwxrwxrwx 1 root root   57 Mar 17  2024 dbus-org.freedesktop.nm-dispatcher.service -> /usr/lib/systemd/system/NetworkManager-dispatcher.service
+# lrwxrwxrwx 1 root root   49 Mar 17  2024 dbus-org.freedesktop.timesync1.service -> /usr/lib/systemd/system/systemd-timesyncd.service
+# lrwxrwxrwx 1 root root   35 Mar 17  2024 display-manager.service -> /lib/systemd/system/lightdm.service
+# drwxr-xr-x 2 root root 4096 Mar 17  2024 getty.target.wants
+
+
+
+
+

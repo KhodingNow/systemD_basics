@@ -1,0 +1,26 @@
+#!/usr/bin/env Python3
+
+# init system - runs in the background - manage all other processes in Linux
+
+# systemctl status apache2
+# sudo systemctl start apache2
+# sudo systemctl stop apache2
+# sudo systemctl enable apache2
+# sudo systemctl disable apache2
+
+
+
+
+
+
+
+
+
+# systemD - systemctl apache2 log file: - the log files DONT always show at the bottom of this file, depends on on permissions
+# sudo systemctl status apache2
+# ○ apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: disabled)
+     Active: inactive (dead)
+       Docs: https://httpd.apache.org/docs/2.4/
+
+
